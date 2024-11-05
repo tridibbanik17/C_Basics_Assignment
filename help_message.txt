@@ -1,0 +1,10 @@
+Usage: ./convert [-b BASE] [-r START FINISH]
+       1 < BASE < 37
+       START and FINISH are long integers
+
+Example: If you want to convert a number 9289389 to a number of base 36, type ./convert -b 36 <Enter> 9289389 <Enter>
+
+Example: If you want to convert a group of numbers from -3 and 3 to numbers of base 2, type ./convert -b 2 -r -3 3 <Enter>
+
+If you want to exit the program, press ctrl-d
+
