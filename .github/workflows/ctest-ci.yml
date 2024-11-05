@@ -8,12 +8,11 @@ on:
 jobs:  
   test:  
     runs-on: ubuntu-latest  
-
     steps:  
       - uses: actions/checkout@v4  
 
-      - name: Test
-        run: make ctest; ./test_script >test_results.txt; gcov ctest-convert.c ctest-parse_options.c ctest-main.c
+      - name: Run Tests
+        run: make ctest; ./test_script > test_results.txt; gcov ctest-convert.c 
           
 
       - name: Upload Test Results  
