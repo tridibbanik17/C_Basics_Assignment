@@ -6,16 +6,21 @@ on:
     branches: [ "main" ]  
 
 jobs:  
-  test:  
+  build:  
     runs-on: ubuntu-latest  
 
     steps:  
-      - uses: actions/checkout@v4  
+      - uses: actions/checkout@v4 
+      - name: Install dependencies
+        run: sudo apt-get install -y gcc make gcov 
 
 
-      - name: Run Tests 
-        run: make ctest; ./test_script >test_results.txt; gcov ctest-convert.c 
+      - name: Build
+        run: make
 
+      - name: Test
+        run: make ctest; ./test_script >test_results.txt; gcov ctest-convert.c ctest-parse_options.c ctest-main.c
+          
 
       - name: Upload Test Results  
         if: ${{ always() }} 
