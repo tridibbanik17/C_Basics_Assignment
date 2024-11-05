@@ -1,0 +1,14 @@
+# Ignore all .gcno files
+*.gcno
+
+# Ignore all .gcda files 
+*.gcda
+
+# Ignore all .gcov files
+*.gcov
+
+# Ignore all executables
+convert 
+ctest
+test_script
+
