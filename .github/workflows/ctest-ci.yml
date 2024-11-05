@@ -12,10 +12,18 @@ jobs:
 
       - name: Build and Run Tests
         run: |
-          make clean               # Clean previous builds
-          make ctest               # Build the executable
-          ./ctest > test_results.txt  # Run the tests and save results
-          gcov main.c convert.c parse_options.c  # Generate coverage files
+
+          # Clean previous builds
+          make clean       
+
+          # Build the executable        
+          make ctest 
+
+          # Run the tests and save results
+          ./ctest > test_results.txt  
+
+          # Generate coverage files
+          gcov main.c convert.c parse_options.c  
 
       - name: Upload Test Results  
         if: ${{ always() }} 
@@ -23,3 +31,4 @@ jobs:
         with:
           name: Test Results  
           path: ./test_results.txt  
+
