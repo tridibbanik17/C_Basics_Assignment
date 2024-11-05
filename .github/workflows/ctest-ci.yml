@@ -5,7 +5,6 @@ on:
   push:  
     branches: [ "main" ]  
 
-# Test ctest executable
 jobs:  
   test:  
     runs-on: ubuntu-latest  
@@ -13,11 +12,11 @@ jobs:
     steps:  
       - uses: actions/checkout@v4  
 
-      # Run the test_script and gcov utilites
+
       - name: Run Tests 
         run: make ctest; ./test_script >test_results.txt; gcov ctest-convert.c 
 
-      # upload the test_script output and coverage report from gcov
+
       - name: Upload Test Results  
         if: ${{ always() }} 
         uses: actions/upload-artifact@v4  

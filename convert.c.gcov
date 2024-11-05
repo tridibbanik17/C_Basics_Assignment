@@ -1,0 +1,27 @@
+        -:    0:Source:convert.c
+        -:    0:Graph:ctest-convert.gcno
+        -:    0:Data:ctest-convert.gcda
+        -:    0:Runs:10
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include "convert.h"
+        -:    4:
+       49:    5:void convert_number(long number, int base) {
+       49:    6:    const char *digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       49:    7:    if (number < 0) {
+        7:    8:        putchar('-');
+        7:    9:        number = -number;
+        -:   10:    }
+       49:   11:    if (number >= base) {
+       28:   12:        convert_number(number / base, base);
+        -:   13:    }
+       49:   14:    putchar(digits[number % base]);
+       49:   15:}
+        -:   16:
+        2:   17:void convert_range(long start, long finish, int base) {
+       2*:   18:    long step = (start < finish) ? 1 : -1;
+      10*:   19:    for (long i = start; (step > 0) ? i <= finish : i >= finish; i += step) {
+        8:   20:        convert_number(i, base);
+        8:   21:        printf("\n");
+        -:   22:    }
+        2:   23:}
