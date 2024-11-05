@@ -6,15 +6,11 @@ on:
     branches: [ "main" ]  
 
 jobs:  
-  build:  
+  test:  
     runs-on: ubuntu-latest  
 
     steps:  
       - uses: actions/checkout@v4  
-
-
-      - name: Build
-        run: make
 
       - name: Test
         run: make ctest; ./test_script >test_results.txt; gcov ctest-convert.c ctest-parse_options.c ctest-main.c
