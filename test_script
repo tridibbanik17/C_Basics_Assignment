@@ -75,20 +75,20 @@ test() {
     echo "TC $tc Passed"
 }
 
-test './convert' 'inp1.txt' 'ex_out1.txt' 'empty.txt'
-test './convert -b 2' 'inp2.txt' 'ex_out2.txt' 'empty.txt'
-test './convert -a' 'empty.txt' 'empty.txt' 'usage.txt'
-test './convert -b 36' 'inp3.txt' 'ex_out3.txt' 'empty.txt'
-test './convert -b 2 -r -3 3' 'empty.txt' 'ex_out4.txt' 'empty.txt'
-test './convert -r 10 0' 'empty.txt' 'ex_out5.txt' 'empty.txt'
-test './convert' 'inp6.txt' 'ex_out6.txt' 'error_message.txt'
-test './convert -b 37' 'empty.txt' 'empty.txt' 'usage.txt'
-test './convert -a -b 23' 'empty.txt' 'empty.txt' 'usage.txt'
-test './convert -b 123 -r 1 2 3' 'empty.txt' 'empty.txt' 'usage.txt'
-test './convert --help' 'empty.txt' 'help_message.txt' 'empty.txt'
-test './convert -b 8' 'inp7.txt' 'ex_out7.txt' 'error_message.txt'
-test './convert -b 1' 'empty.txt' 'empty.txt' 'usage.txt'
-test './convert -b 34' 'inp8.txt' 'ex_out8.txt' 'empty.txt'
+test './ctest' 'inp1.txt' 'ex_out1.txt' 'empty.txt'
+test './ctest -b 2' 'inp2.txt' 'ex_out2.txt' 'empty.txt'
+test './ctest -a' 'empty.txt' 'empty.txt' 'usage.txt'
+test './ctest -b 36' 'inp3.txt' 'ex_out3.txt' 'empty.txt'
+test './ctest -b 2 -r -3 3' 'empty.txt' 'ex_out4.txt' 'empty.txt'
+test './ctest -r 10 0' 'empty.txt' 'ex_out5.txt' 'empty.txt'
+test './ctest' 'inp6.txt' 'ex_out6.txt' 'error_message.txt'
+test './ctest -b 37' 'empty.txt' 'empty.txt' 'usage.txt'
+test './ctest -a -b 23' 'empty.txt' 'empty.txt' 'usage.txt'
+test './ctest -b 123 -r 1 2 3' 'empty.txt' 'empty.txt' 'usage.txt'
+test './ctest --help' 'empty.txt' 'help_message.txt' 'empty.txt'
+test './ctest -b 8' 'inp7.txt' 'ex_out7.txt' 'error_message.txt'
+test './ctest -b 1' 'empty.txt' 'empty.txt' 'usage.txt'
+test './ctest -b 34' 'inp8.txt' 'ex_out8.txt' 'empty.txt'
 
 # clean up
 rm test_err.txt test_out.txt
