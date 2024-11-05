@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4		
 
       - name: build convert			
-        run: gcc -o convert convert.c		
+        run: gcc -o convert parse_options.c convert.c	main.c
 
       - name: upload binary			
         uses: actions/upload-artifact@v4	
