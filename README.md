@@ -88,4 +88,14 @@ To get started with the project, follow these steps:
         Then, enter the numbers you want to convert, one per line. Press `Ctrl+D` to exit.
     -   To convert a range of numbers:
         ```sh
-        ./ctest -b <base> -r <start> <
+        ./ctest -b <base> -r <start> <finish>
+        ```
+        Replace `<base>` with the desired base, `<start>` with the starting number, and `<finish>` with the ending number.
+    -   To view the help message:
+        ```sh
+        ./ctest --help
+        ```
+
+## Acknowledgments
+
+-   This project uses a `makefile` to simplify the build process.
